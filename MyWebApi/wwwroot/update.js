@@ -1,49 +1,42 @@
-﻿
-const user1=sessionStorage.getItem("user")
+﻿const user1 =JSON.parse(sessionStorage.getItem("user"));
 
-const email = document.querySelector("#email").value
-const password = document.querySelector("#password").value
-const firstname = document.querySelector("#firstname").value
-const familyname = document.querySelector("#familyname").value
-
+const name = document.querySelector("#name")
+const lastName = document.querySelector("#lastName")
+const password = document.querySelector("#password")
+const email = document.querySelector("#email")
 
 email.value = user1.email
+name.value = user1.name
+lastName.value = user1.lastName
 password.value = user1.password
-firstname.value = user1.firstname
-familyname.value = user1.familyname
-
 
 const update = async () => {
-
-    const email = document.querySelector("#email").value
+    const id = user1.id
+    const name = document.querySelector("#name").value
+    const lastName = document.querySelector("#lastName").value
     const password = document.querySelector("#password").value
-    const firstname = document.querySelector("#firstname").value
-    const familyname = document.querySelector("#familyname").value
-
-    const user = {
-        email: email, password: password, firstname: firstname, familyname: familyname
-    };
-
+    const email = document.querySelector("#email").value
+    const updateUser = {
+        email: email || user1.email, password: password || user1.password, name: name || user1.name, lastName: lastName || user1.lastName, id: user1.id
+    }
     try {
-        const response = await fetch("api/Users"+id, {
-
-
+        const response = await fetch(`api/Users/${id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': "application/json"
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(updateUser)
+
         })
-
-
-
-        if (!response.ok) {
-
-            throw new Error("error finding details");
+        if (!response.ok)
+            throw new Error("error changing details")
+        else {
+            
+            sessionStorage.setItem("user", JSON.stringify(updateUser));
+            alert("הפרטים עודכנו")
         }
     }
-    catch (e) {
-        alert(e.message);
+    catch (error) {
+        alert(error.message)
     }
-
 }
