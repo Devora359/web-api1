@@ -1,5 +1,3 @@
-﻿{"email":1,"password":1,"firstname":1,"familyname":1,"userId":1}
-{"email":1,"password":1,"firstname":1,"familyname":1,"userId":2}
 {"email":"dvori@gmail.com","password":"12345","firstname":"dvori","familyname":"klein","userId":3}
 {"email":"dvori@gmail.com","password":"12345","firstname":"dvori","familyname":"klein","userId":4}
 {"email":"d@g.c","password":"1234","firstname":"dd","familyname":"kk","userId":5}
