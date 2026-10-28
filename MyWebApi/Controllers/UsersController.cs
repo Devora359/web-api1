@@ -19,11 +19,13 @@ namespace MyWebApi.Controllers
 
         // GET api/<UsersController>/5
         [HttpGet("{id}")]
+        //Why isn't it implemented? It should read the file and return the user with this id (or NotFound / NoContent)
         public string Get(int id)
         {
             return "value";
         }
-        string filePath = "file.txt";
+        //fix: The path never changes, so it can be readonly
+        readonly string filePath = "file.txt";
         // POST api/<UsersController>
         [HttpPost]
         public ActionResult<User> Post([FromBody] User user)
@@ -38,6 +40,7 @@ namespace MyWebApi.Controllers
 
         }
 
+        //The assignment asks a wrong login to return NoContent() (204)
         [HttpPost("login")]
         public ActionResult<User> Post([FromBody] userLogin loginUser)
         {
@@ -59,7 +62,9 @@ namespace MyWebApi.Controllers
 
         // PUT api/<UsersController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        //The assignment asks PUT to return Ok(): change void to IActionResult and return Ok() at the end
+        //fix: The project didn't build: userToUpdate was used below but didn't exist. PUT receives the updated user
+        public void Put(int id, [FromBody] User userToUpdate)
         {
             string textToReplace = string.Empty;
             using (StreamReader reader =
@@ -71,12 +76,18 @@ namespace MyWebApi.Controllers
                     User user =
                     JsonSerializer.Deserialize<User>(currentUserInFile);
                     if (user.userId == id)
+                    {
                         textToReplace = currentUserInFile;
+                        //fix: Found- break
+                        break;
+                    }
                 }
             }
            
                    if(textToReplace != string.Empty)
 {
+                //fix: Keep the id, otherwise the updated user is saved without it
+                userToUpdate.userId = id;
                 string text = System.IO.File.ReadAllText(filePath);
                 text = text.Replace(textToReplace,
                 JsonSerializer.Serialize(userToUpdate));

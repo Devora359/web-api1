@@ -1,5 +1,6 @@
 const user1 = JSON.parse(sessionStorage.getItem("user"));
 
+//update.html has the ids name and lastName, not firstname and familyname, so these are null. Use the same ids in both files
 const firstname = document.querySelector("#firstname")
 const familyname = document.querySelector("#familyname")
 const password = document.querySelector("#password")
@@ -23,11 +24,13 @@ const update = async () => {
         email: email || user1.email,
         password: password || user1.password,
         firstname: firstname || user1.firstname,
+        //familyname here is the input element, not its value. Did you mean lastName?
         familyname: familyname || user1.familyname,
         userId: user1.userId
     }
     alert("after updateUser");
     try {
+        //id isn't defined in this file. Did you mean userId?
         const response = await fetch(`api/Users/${id}`, {
             method: "PUT",
             headers: {
