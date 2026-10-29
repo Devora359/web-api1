@@ -26,9 +26,6 @@ namespace MyWebApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] string password)
         {
-         
-
-          
 
             int result = Zxcvbn.Core.EvaluatePassword(password).Score;
             return Ok(result);

@@ -16,7 +16,7 @@ document.querySelector("#welcome").textContent =
 const updat = async () => {
     const userId = user1.userId
     const firstname = document.querySelector("#firstname").value
-    const lastName = document.querySelector("#familyname").value
+    const familyname = document.querySelector("#familyname").value
     const password = document.querySelector("#password").value
     const email = document.querySelector("#email").value
     const updateUser = {
