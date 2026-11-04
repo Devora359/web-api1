@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Project Path="Entity/Entities.csproj" Id="89f8b278-ae34-45ff-b54e-fa3e5af5da21" />
+  <Project Path="MyWebApi/MyWebApi.csproj" />
+  <Project Path="Repository/Repositories.csproj" Id="cc26fada-2c09-4935-bd58-1a7c2caceb35" />
+  <Project Path="Services/Services.csproj" Id="88404d67-bd57-48a4-9560-18738c07ecbc" />
+</Solution>

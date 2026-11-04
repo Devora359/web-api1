@@ -1,4 +1,4 @@
-﻿namespace MyWebApi
+﻿namespace Entities
 {
     public class userLogin
     {

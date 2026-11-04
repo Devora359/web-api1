@@ -140,13 +140,13 @@
     "Parameters": [
       {
         "Name": "user",
-        "Type": "MyWebApi.User",
+        "Type": "Entities.User",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MyWebApi.User",
+        "Type": "Entities.User",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -172,7 +172,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "Entities.User",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -197,7 +197,7 @@
       },
       {
         "Name": "userToUpdate",
-        "Type": "MyWebApi.User",
+        "Type": "Entities.User",
         "IsRequired": true
       }
     ],
@@ -241,13 +241,13 @@
     "Parameters": [
       {
         "Name": "loginUser",
-        "Type": "MyWebApi.userLogin",
+        "Type": "Entities.userLogin",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MyWebApi.User",
+        "Type": "Entities.User",
         "MediaTypes": [
           "text/plain",
           "application/json",

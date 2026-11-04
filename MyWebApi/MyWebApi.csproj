@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="file.txt" />
+    <PackageReference Include="zxcvbn-core" Version="7.0.92" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="zxcvbn-core" Version="7.0.92" />
+    <ProjectReference Include="..\Entity\Entities.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 
 </Project>

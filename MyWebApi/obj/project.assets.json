@@ -14,6 +14,44 @@
             "related": ".xml"
           }
         }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
+      },
+      "Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repositories.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "Repositories": "1.0.0",
+          "zxcvbn-core": "7.0.92"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -35,10 +73,27 @@
         "zxcvbn-core.7.0.92.nupkg.sha512",
         "zxcvbn-core.nuspec"
       ]
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entity/Entities.csproj",
+      "msbuildProject": "../Entity/Entities.csproj"
+    },
+    "Repositories/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Repositories.csproj",
+      "msbuildProject": "../Repository/Repositories.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "Entities >= 1.0.0",
+      "Services >= 1.0.0",
       "zxcvbn-core >= 7.0.92"
     ]
   },
@@ -75,7 +130,14 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "M:\\web api\\MyWebApi\\Entity\\Entities.csproj": {
+              "projectPath": "M:\\web api\\MyWebApi\\Entity\\Entities.csproj"
+            },
+            "M:\\web api\\MyWebApi\\Services\\Services.csproj": {
+              "projectPath": "M:\\web api\\MyWebApi\\Services\\Services.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

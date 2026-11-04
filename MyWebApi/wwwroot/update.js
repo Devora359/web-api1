@@ -16,7 +16,7 @@ document.querySelector("#welcome").textContent =
 const updat = async () => {
     const userId = user1.userId
     const firstname = document.querySelector("#firstname").value
-    const lastName = document.querySelector("#familyname").value
+    const familyname = document.querySelector("#familyname").value
     const password = document.querySelector("#password").value
     const email = document.querySelector("#email").value
     const updateUser = {
@@ -26,7 +26,7 @@ const updat = async () => {
         familyname: familyname || user1.familyname,
         userId: user1.userId
     }
-    alert("after updateUser");
+   
     try {
         const response = await fetch(`api/Users/${userId}`, {
             method: "PUT",
