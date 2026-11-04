@@ -1,8 +1,0 @@
-M:\web api\MyWebApi\MyWebApi\wwwroot\update.html
-M:\web api\MyWebApi\MyWebApi\wwwroot\Home.js
-M:\web api\MyWebApi\MyWebApi\wwwroot\home.html
-M:\web api\MyWebApi\MyWebApi\wwwroot\update.js
-wwwroot\Home.js
-wwwroot\home.html
-wwwroot\update.html
-wwwroot\update.js
