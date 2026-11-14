@@ -1,5 +1,6 @@
 ﻿namespace Entities
 {
+    //In C#, class names are PascalCase: UserLogin
     public class userLogin
     {
 
