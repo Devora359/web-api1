@@ -7,6 +7,7 @@ namespace MyWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //In C#, class names are PascalCase: PasswordController, in a file named PasswordController.cs
     public class passwordController : ControllerBase
     {
 

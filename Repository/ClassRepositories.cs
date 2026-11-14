@@ -4,6 +4,7 @@ using Entities;
 
 namespace Repositories
 {
+    //The assignment asks that the code uses no full path on a disk: use a path relative to the project
     public class ClassRepositories : IClassRepositories
     {
 

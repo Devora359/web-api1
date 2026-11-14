@@ -7,6 +7,7 @@ using Repositories;
 
 namespace Services
 {
+    //In C#, class names are PascalCase: ClassService
     public class classService : IclassService
     {
 

@@ -48,12 +48,14 @@ namespace MyWebApi.Controllers
            
             if (classService.AddUserLogin(loginUser) != null)
                 return Ok(classService.AddUserLogin(loginUser));
+            //The assignment asks a wrong login to return 204 NoContent: what should this return instead of NotFound?
             return NotFound();
 
         }
 
         // PUT api/<UsersController>/5
         [HttpPut("{id}")]
+        //The assignment asks PUT to return Ok(): change void to IActionResult and return Ok() at the end
         public void Put(int id, [FromBody] User userToUpdate)
         {
             classService.updateUser(id, userToUpdate);
