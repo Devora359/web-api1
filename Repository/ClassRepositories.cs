@@ -9,6 +9,7 @@ namespace Repositories
 
         public User AddUser(User user)
         {
+            //Full path on the M: drive: it only works on this computer. Use a path relative to the project, for example Path.Combine("..", "Repository", "file.txt")
             string filePath = "M:\\web api\\MyWebApi\\Repository\\file.txt";
 
             int numberOfUsers = System.IO.File.ReadLines(filePath).Count();
@@ -23,6 +24,7 @@ namespace Repositories
 
         public User AddUserLogin(userLogin loginUser)
         {
+            //Full path on the M: drive: it only works on this computer. Use a path relative to the project, for example Path.Combine("..", "Repository", "file.txt")
             string filePath = "M:\\web api\\MyWebApi\\Repository\\file.txt";
             using (StreamReader reader = System.IO.File.OpenText(filePath))
             {
@@ -43,6 +45,7 @@ namespace Repositories
 
         public void updateUser(int id, User userToUpdate)
         {
+            //Full path on the M: drive: it only works on this computer. Use a path relative to the project, for example Path.Combine("..", "Repository", "file.txt")
             string filePath = "M:\\web api\\MyWebApi\\Repository\\file.txt";
 
             string textToReplace = string.Empty;
@@ -71,6 +74,7 @@ namespace Repositories
 
         public User GetUserById(int id)
         {
+            //Full path on the M: drive: it only works on this computer. Use a path relative to the project, for example Path.Combine("..", "Repository", "file.txt")
             string filePath = "M:\\web api\\MyWebApi\\Repository\\file.txt";
 
             using (StreamReader reader = System.IO.File.OpenText(filePath))

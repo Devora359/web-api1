@@ -14,6 +14,7 @@ namespace MyWebApi.Controllers
         IclassService classService;
 
 
+        //The assignment asks the users controller to take the password service's interface and call it: where should this controller get the password service?
         public UsersController(IclassService classService)
         {
             this.classService = classService;
@@ -36,6 +37,7 @@ namespace MyWebApi.Controllers
         [HttpPost]
         public ActionResult<User> Post([FromBody] User user)
         {
+            //Where is the password checked? The assignment asks a weak password (score below 3) to return 400 here, before the user is added
             user= classService.AddUser(user);
             return CreatedAtAction(nameof(Get), new { id = user.userId },
             user);
@@ -48,14 +50,17 @@ namespace MyWebApi.Controllers
            
             if (classService.AddUserLogin(loginUser) != null)
                 return Ok(classService.AddUserLogin(loginUser));
+            //The assignment asks login with a wrong password to return 204 (NoContent): what should this return instead of NotFound?
             return NotFound();
 
         }
 
         // PUT api/<UsersController>/5
         [HttpPut("{id}")]
+        //The assignment asks PUT to return Ok(): change void to IActionResult and return Ok() at the end
         public void Put(int id, [FromBody] User userToUpdate)
         {
+            //Where is the password checked before the update? The assignment asks a weak password (score below 3) to return 400
             classService.updateUser(id, userToUpdate);
 
         }
